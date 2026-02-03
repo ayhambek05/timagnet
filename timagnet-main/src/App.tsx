@@ -12,6 +12,7 @@ import TermsOfSalesPage from "./pages/TermsOfSalesPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
+import { BackToTop } from "./components/layout/BackToTop";
 
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsent />
+          <BackToTop />
         </BrowserRouter>
       </TooltipProvider>
     </CartProvider>
