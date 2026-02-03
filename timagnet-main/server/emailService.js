@@ -44,7 +44,7 @@ export const sendOrderEmails = async (orderData, transporter, __dirname) => {
           <table width="100%" style="font-size: 14px; color: #4b5563;">
             <tr>
               <td>Quantité: ${qty}</td>
-              <td align="right">${item.price} €</td>
+              <td align="right">${Number(item.price).toFixed(2)} €</td>
             </tr>
           </table>
         </div>
@@ -129,9 +129,9 @@ export const sendOrderEmails = async (orderData, transporter, __dirname) => {
         ${itemsHtml}
         
         <div style="margin-top: 20px; border-top: 2px solid #333; padding-top: 10px;">
-          <p><strong>Frais de livraison:</strong> ${deliveryFee || 0} €</p>
-          ${discountAmount > 0 ? `<p><strong>Réduction (${promoCode}):</strong> -${discountAmount} €</p>` : ''}
-          <p><strong>Prix Total:</strong> ${totalPrice} €</p>
+          <p><strong>Frais de livraison:</strong> ${Number(deliveryFee || 0).toFixed(2)} €</p>
+          ${discountAmount > 0 ? `<p><strong>Réduction (${promoCode}):</strong> -${Number(discountAmount).toFixed(2)} €</p>` : ''}
+          <p><strong>Prix Total:</strong> ${Number(totalPrice).toFixed(2)} €</p>
         </div>
         
         <p>Voir les images jointes pour la commande.</p>
@@ -174,9 +174,9 @@ export const sendOrderEmails = async (orderData, transporter, __dirname) => {
               </div>
               
               <div style="text-align: right; margin-bottom: 32px;">
-                <p style="margin: 5px 0; color: #6b7280;">Frais de livraison: ${deliveryFee || 0} €</p>
-                ${discountAmount > 0 ? `<p style="margin: 5px 0; color: #166534;">Réduction (${promoCode}): -${discountAmount} €</p>` : ''}
-                <p style="margin: 5px 0; font-size: 20px; font-weight: bold; color: #111827;">Total: ${totalPrice} €</p>
+                <p style="margin: 5px 0; color: #6b7280;">Frais de livraison: ${Number(deliveryFee || 0).toFixed(2)} €</p>
+                ${discountAmount > 0 ? `<p style="margin: 5px 0; color: #166534;">Réduction (${promoCode}): -${Number(discountAmount).toFixed(2)} €</p>` : ''}
+                <p style="margin: 5px 0; font-size: 20px; font-weight: bold; color: #111827;">Total: ${Number(totalPrice).toFixed(2)} €</p>
               </div>
               
               <p style="color: #374151; font-size: 14px; text-align: center;">Votre commande est en cours de traitement.</p>

@@ -167,6 +167,7 @@ app.post('/api/order', upload.array('images'), async (req, res) => {
     await saveOrder(orderId, orderData);
 
     let successUrl, cancelUrl;
+    let sessionUrl;
     const frontendUrl = process.env.FRONTEND_URL || req.headers.origin || 'http://localhost:5173';
 
     if (stripe) {
