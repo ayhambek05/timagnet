@@ -5,6 +5,34 @@ import { useTranslation } from "react-i18next";
 const CookiePolicyPage = () => {
   const { t } = useTranslation();
 
+  const renderList = (key: string) => {
+    const items = t(key, { returnObjects: true });
+    if (!Array.isArray(items)) return null;
+    return items.map((item: string, i: number) => (
+      <li key={i}>{item}</li>
+    ));
+  };
+
+  const renderTableHeaders = (key: string) => {
+    const items = t(key, { returnObjects: true });
+    if (!Array.isArray(items)) return null;
+    return items.map((header: string, i: number) => (
+      <th key={i} className="border border-border p-2 text-left">{header}</th>
+    ));
+  };
+
+  const renderTableRows = (key: string) => {
+    const items = t(key, { returnObjects: true });
+    if (!Array.isArray(items)) return null;
+    return items.map((row: string[], i: number) => (
+      <tr key={i}>
+        {row.map((cell, j) => (
+          <td key={j} className="border border-border p-2">{cell}</td>
+        ))}
+      </tr>
+    ));
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -18,9 +46,7 @@ const CookiePolicyPage = () => {
           </p>
           <p className="mb-2 font-medium">{t('legal.cookies.section1.list_intro')}</p>
           <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-             {(t('legal.cookies.section1.list', { returnObjects: true }) as string[]).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+            {renderList('legal.cookies.section1.list')}
           </ul>
         </section>
 
@@ -35,9 +61,7 @@ const CookiePolicyPage = () => {
             </p>
             <p className="mb-1 font-medium text-sm">{t('legal.cookies.section2.subsection1.list_intro')}</p>
             <ul className="list-disc pl-6 text-muted-foreground">
-               {(t('legal.cookies.section2.subsection1.list', { returnObjects: true }) as string[]).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+              {renderList('legal.cookies.section2.subsection1.list')}
             </ul>
           </div>
 
@@ -79,9 +103,7 @@ const CookiePolicyPage = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('legal.cookies.section4.title')}</h2>
           <p className="mb-2 text-muted-foreground">{t('legal.cookies.section4.intro')}</p>
           <ul className="list-disc pl-6 mb-4 text-muted-foreground">
-             {(t('legal.cookies.section4.list', { returnObjects: true }) as string[]).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+            {renderList('legal.cookies.section4.list')}
           </ul>
           <p className="mb-4 text-muted-foreground">
             {t('legal.cookies.section4.p1')}
@@ -97,19 +119,11 @@ const CookiePolicyPage = () => {
             <table className="w-full border-collapse border border-border">
               <thead>
                 <tr className="bg-muted">
-                  {(t('legal.cookies.section5.table.headers', { returnObjects: true }) as string[]).map((header, i) => (
-                    <th key={i} className="border border-border p-2 text-left">{header}</th>
-                  ))}
+                  {renderTableHeaders('legal.cookies.section5.table.headers')}
                 </tr>
               </thead>
               <tbody>
-                {(t('legal.cookies.section5.table.rows', { returnObjects: true }) as string[][]).map((row, i) => (
-                  <tr key={i}>
-                    {row.map((cell, j) => (
-                      <td key={j} className="border border-border p-2">{cell}</td>
-                    ))}
-                  </tr>
-                ))}
+                {renderTableRows('legal.cookies.section5.table.rows')}
               </tbody>
             </table>
           </div>
@@ -126,9 +140,7 @@ const CookiePolicyPage = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('legal.cookies.section7.title')}</h2>
           <p className="mb-2 text-muted-foreground">{t('legal.cookies.section7.intro')}</p>
           <ul className="list-disc pl-6 mb-4 text-muted-foreground">
-             {(t('legal.cookies.section7.list', { returnObjects: true }) as string[]).map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+            {renderList('legal.cookies.section7.list')}
           </ul>
           <p className="text-muted-foreground">
             {t('legal.cookies.section7.contact')} <a href="mailto:contact@timagnet.com" className="text-primary hover:underline">contact@timagnet.com</a>

@@ -418,6 +418,7 @@
        "date": "Effective Date: January 1, 2026",
        "section1": {
          "title": "Article 1 - Legal Information",
+         "owner": "Ti'Magnet",
          "email": "Email:",
          "siret": "SIRET: 994 873 198 00018",
          "tva": "VAT: VAT not applicable, article 293 B of the General Tax Code",
@@ -584,9 +585,9 @@
        "section10": {
          "title": "Article 10 - Personal Data Protection (GDPR)",
          "subsection1": {
-           "title": "10.1 Data Controller",
-           "content": "The personal data controller can be contacted at the following address:"
-         },
+          "title": "10.1 Data Controller",
+          "content": "The personal data controller is Ti'Magnet."
+        },
          "subsection2": {
            "title": "10.2 Data Collected",
            "intro": "Ti’Magnet collects the following personal data:",

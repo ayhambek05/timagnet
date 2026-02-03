@@ -18,7 +18,6 @@ export function Header() {
   const { items } = useCart();
   const [isOpen, setIsOpen] = useState(false);
   const isOrderPage = location.pathname === "/order";
-  const isHomePage = location.pathname === "/";
 
   const NavItems = ({ mobile = false }) => (
     <>
@@ -66,7 +65,7 @@ export function Header() {
           <img 
             src={logo} 
             alt="Ti'Magnet Logo" 
-            className={`w-auto transition-all duration-300 ${isHomePage ? 'h-14' : 'h-10'}`} 
+            className="w-auto transition-all duration-300 h-14" 
           />
         </Link>
 

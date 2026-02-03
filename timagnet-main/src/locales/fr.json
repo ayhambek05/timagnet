@@ -204,10 +204,16 @@
     "privacy": {
       "title": "Politique de confidentialité de Ti’Magnet",
       "date": "Date d’entrée en vigueur : 1er janvier 2026",
-      "intro": "La présente politique de confidentialité décrit comment Ti’Magnet (« nous », « notre » ou « nos ») collecte, utilise, conserve et protège les données personnelles que vous (« vous », « votre ») nous communiquez via notre site internet www.timagnet.com, application mobile, ou lorsque vous utilisez nos services (achat de magnets, inscription à la newsletter, etc.) conformément au Règlement général sur la protection des données (RGPD) et à la loi « Informatique et Libertés ».",
+      "intro": "La présente politique de confidentialité décrit comment Ti’Magnet (« nous », « notre » ou « nos ») collecte, utilise, conserve et protège les données personnelles que vous (« vous », « votre ») nous communiquez via notre site internet timagnet.com, application mobile, ou lorsque vous utilisez nos services (achat de magnets, inscription à la newsletter, etc.) conformément au Règlement général sur la protection des données (RGPD) et à la loi « Informatique et Libertés ».",
       "section1": {
         "title": "1. Responsable du traitement",
-        "content": "Le responsable du traitement des données personnelles est :"
+        "content": "Le responsable du traitement des données personnelles est :",
+        "details": [
+            "Ti'Magnet",
+            "Courriel : contact@timagnet.com",
+            "Numéro SIRET : 994 873 198 00018",
+            "Délégué à la protection des données : contact@timagnet.com"
+          ]
       },
       "section2": {
         "title": "2. Catégories de données collectées",
@@ -418,8 +424,9 @@
        "date": "En vigueur au : 1er janvier 2026",
        "section1": {
          "title": "Article 1 - Informations Légales",
-         "email": "Courriel :",
-         "siret": "SIRET : 994 873 198 00018",
+         "owner": "Ti'Magnet",
+          "email": "Courriel :",
+         "siret": "Numéro SIRET : 994 873 198 00018",
          "tva": "TVA : TVA non applicable, article 293 B du Code Général des Impôts",
          "host": "Hébergement du Site :",
          "host_details": ["Hostinger International Ltd.", "61 Lordou Vironos Street, 6023 Larnaca, Cyprus", "www.hostinger.com"]
@@ -584,9 +591,9 @@
        "section10": {
          "title": "Article 10 - Protection Des Données Personnelles (RGPD)",
          "subsection1": {
-           "title": "10.1 Responsable du traitement",
-           "content": "Le responsable du traitement des données personnelles peut être contacté à l'adresse suivante :"
-         },
+          "title": "10.1 Responsable du traitement",
+          "content": "Le responsable du traitement des données personnelles est Ti'Magnet."
+        },
          "subsection2": {
            "title": "10.2 Données collectées",
            "intro": "Ti’Magnet collecte les données personnelles suivantes :",
@@ -679,13 +686,14 @@
        "date": "En vigueur au : 1er janvier 2026",
        "intro": "Les présentes Conditions Générales d’Utilisation (ci-après les « CGU ») régissent l’accès et l’utilisation du site internet Ti’Magnet, accessible à l’adresse www.timagnet.com (ci-après le « Site »). Toute navigation sur le Site implique l’acceptation pleine et entière des présentes CGU par l’utilisateur.",
        "section1": {
-         "title": "1. Éditeur du site",
-         "intro": "Le Site est édité par :",
-         "email": "Courriel :",
-         "siret": "SIRET : 994 873 198 00018",
-         "host": "Hébergement du Site :",
-         "host_details": ["Hostinger International Ltd.", "61 Lordou Vironos Street, 6023 Larnaca, Cyprus", "www.hostinger.com"]
-       },
+        "title": "1. Éditeur du site",
+        "intro": "Le Site est édité par :",
+        "editor_name": "Ti'Magnet",
+        "email": "Courriel :",
+        "siret": "Numéro SIRET : 994 873 198 00018",
+        "host": "Hébergement du Site :",
+        "host_details": ["Hostinger International Ltd.", "61 Lordou Vironos Street, 6023 Larnaca, Cyprus", "www.hostinger.com"]
+      },
        "section2": {
          "title": "2. Objet du site",
          "intro": "Le Site a pour objet :",
