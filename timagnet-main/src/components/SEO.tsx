@@ -7,6 +7,7 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
+  noIndex?: boolean;
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -14,11 +15,12 @@ const SEO: React.FC<SEOProps> = ({
   description, 
   keywords, 
   image = '/og-image.png', 
-  url = 'https://timagnet.com' 
+  url = 'https://timagnet.com',
+  noIndex = false
 }) => {
   const siteTitle = "Ti'Magnet - Magnets Photo Personnalisés & Aimants Frigo France";
   const defaultDescription = "Créez des magnets photo personnalisés uniques en France. Transformez vos souvenirs en aimants pour frigo de haute qualité. Livraison rapide et satisfaction garantie.";
-  const defaultKeywords = "magnets photo, aimants personnalisés, magnets frigo, impression photo magnet, cadeau personnalisé, décoration photo, Ti'Magnet, France";
+  const defaultKeywords = "magnets photo, magnets personnalisés, aimants frigo, aimant photo, magnet frigo personnalisé, impression photo magnet, cadeau personnalisé, décoration photo, magnet naissance, magnet mariage, idée cadeau photo, magnets souples, Ti'Magnet, France";
 
   const metaTitle = title ? `${title} | Ti'Magnet` : siteTitle;
   const metaDescription = description || defaultDescription;
@@ -29,6 +31,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={metaKeywords} />
+      {noIndex && <meta name="robots" content="noindex, nofollow" />}
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />

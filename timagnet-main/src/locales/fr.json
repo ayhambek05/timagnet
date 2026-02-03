@@ -12,14 +12,30 @@
   "creations": {
     "title": "Nos Réalisations",
     "description": "Découvrez quelques exemples de magnets personnalisés créés pour nos clients. Chaque magnet raconte une histoire unique.",
-    "seo_title": "Nos Réalisations - Ti'Magnet",
+    "seo_title": "Nos Réalisations",
     "seo_desc": "Galerie de photos de nos magnets personnalisés. Découvrez la qualité de nos impressions et inspirez-vous pour vos propres créations."
   },
   "seo": {
-    "cart_title": "Mon Panier - Ti'Magnet",
+    "home_title": "Magnets Photo Personnalisés & Aimants Frigo France",
+    "home_desc": "Créez des magnets photo personnalisés uniques en France. Transformez vos souvenirs en aimants pour frigo de haute qualité. Livraison rapide et satisfaction garantie.",
+    "cart_title": "Mon Panier",
     "cart_desc": "Finalisez votre commande de magnets photo personnalisés.",
-    "success_title": "Commande Confirmée - Ti'Magnet",
-    "success_desc": "Votre commande a été confirmée avec succès."
+    "success_title": "Commande Confirmée",
+    "success_desc": "Votre commande a été confirmée avec succès.",
+    "contact_title": "Contactez-nous",
+    "contact_desc": "Une question ? Contactez l'équipe Ti'Magnet pour vos magnets personnalisés.",
+    "order_title": "Commander des Magnets",
+    "order_desc": "Créez vos magnets personnalisés en quelques clics. Choisissez votre format et importez vos photos.",
+    "privacy_title": "Politique de Confidentialité",
+    "privacy_desc": "Consultez notre politique de confidentialité et de protection des données.",
+    "terms_sales_title": "Conditions Générales de Vente",
+    "terms_sales_desc": "Consultez nos conditions générales de vente.",
+    "terms_use_title": "Conditions Générales d'Utilisation",
+    "terms_use_desc": "Consultez nos conditions générales d'utilisation.",
+    "cookie_title": "Politique de Cookies",
+    "cookie_desc": "En savoir plus sur notre utilisation des cookies.",
+    "404_title": "Page Non Trouvée",
+    "404_desc": "La page que vous recherchez n'existe pas."
   },
   "hero": {
     "title_part1": "Vos souvenirs,",

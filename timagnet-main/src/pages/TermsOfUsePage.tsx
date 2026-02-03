@@ -1,10 +1,18 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
 const TermsOfUsePage = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={t('seo.terms_use_title')}
+        description={t('seo.terms_use_desc')}
+        url="https://timagnet.com/terms-of-use"
+      />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-3xl font-bold mb-2">Conditions Générales d’Utilisation (CGU)</h1>

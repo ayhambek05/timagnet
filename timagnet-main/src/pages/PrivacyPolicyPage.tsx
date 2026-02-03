@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 
 const PrivacyPolicyPage = () => {
   const { t } = useTranslation();
@@ -36,6 +37,11 @@ const PrivacyPolicyPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={t('seo.privacy_title')}
+        description={t('seo.privacy_desc')}
+        url="https://timagnet.com/privacy-policy"
+      />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-3xl font-bold mb-2">{t('legal.privacy.title')}</h1>

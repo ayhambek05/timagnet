@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { PRODUCTS } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const OrderPage = () => {
   const { t } = useTranslation();
@@ -135,6 +136,11 @@ const OrderPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={t('seo.order_title')}
+        description={t('seo.order_desc')}
+        url="https://timagnet.com/order"
+      />
       <Header />
       <main className="flex-1 py-12">
         <div className="container max-w-4xl">

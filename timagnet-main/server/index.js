@@ -8,6 +8,9 @@ import { fileURLToPath } from 'url';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import Stripe from 'stripe';
+import { randomUUID } from 'crypto';
+import { saveOrder, getOrder, deleteOrder } from './orderStorage.js';
+import { sendOrderEmails } from './emailService.js';
 
 dotenv.config();
 
@@ -15,6 +18,10 @@ const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SEC
 
 if (!process.env.STRIPE_SECRET_KEY) {
   console.warn('Warning: STRIPE_SECRET_KEY is not set. Payment features will not work.');
+}
+
+if (!process.env.STRIPE_WEBHOOK_SECRET) {
+  console.warn('Warning: STRIPE_WEBHOOK_SECRET is not set. Webhooks will not work securely.');
 }
 
 const __filename = fileURLToPath(import.meta.url);
@@ -40,21 +47,11 @@ app.use('/api', limiter);
 
 // Middleware
 // Configure CORS to allow requests from your frontend domain
-// In production, replace '*' with your actual domain, e.g., 'https://your-domain.com'
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*', // Allow all origins by default or use env var
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-app.use(express.json({ limit: '50mb' })); // Increase limit for base64 images if sent as JSON
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
-
-// Configure Multer for handling file uploads (if we decide to send as FormData)
-const upload = multer({ 
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit per file
-});
 
 // Email Transporter Configuration
 let transporter;
@@ -89,6 +86,68 @@ if (smtpPass) {
   });
 }
 
+// Stripe Webhook Endpoint
+// This needs to be defined BEFORE express.json() because it needs the raw body
+app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  let event;
+
+  try {
+    if (endpointSecret) {
+        event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+    } else {
+        // WARNING: Only for development without webhook secret. INSECURE.
+        console.warn('⚠️  Webhook received without signature verification (STRIPE_WEBHOOK_SECRET not set).');
+        event = JSON.parse(req.body.toString());
+    }
+  } catch (err) {
+    console.error(`Webhook Error: ${err.message}`);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  // Handle the event
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const orderId = session.metadata?.orderId;
+
+    if (orderId) {
+      console.log(`Payment successful for order ${orderId}. Retrieving order details...`);
+      const orderData = await getOrder(orderId);
+
+      if (orderData) {
+        try {
+          console.log('Sending confirmation emails...');
+          await sendOrderEmails(orderData, transporter, __dirname);
+          console.log('Emails sent. Cleaning up order storage...');
+          await deleteOrder(orderId);
+        } catch (emailError) {
+          console.error('Error sending emails in webhook:', emailError);
+        }
+      } else {
+        console.error(`Order data not found for orderId: ${orderId}`);
+      }
+    } else {
+      console.error('No orderId found in session metadata.');
+    }
+  }
+
+  // Return a 200 response to acknowledge receipt of the event
+  res.send();
+});
+
+
+app.use(express.json({ limit: '50mb' })); // Increase limit for base64 images if sent as JSON
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+// Configure Multer for handling file uploads (if we decide to send as FormData)
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 } // 10MB limit per file
+});
+
+
 const PROMO_CODES = {
   'MAGNET5': 0.05,
   'MAGNET10': 0.10,
@@ -99,205 +158,16 @@ const PROMO_CODES = {
 // API Routes
 app.post('/api/order', upload.array('images'), async (req, res) => {
   try {
-    const { 
-      items, // Array of items from CartPage
-      totalPrice, 
-      deliveryFee,
-      deliveryOption, 
-      customerEmail, 
-      customerName,
-      customerPhone,
-      customerAddress,
-      promoCode,
-      discountAmount,
-      // Legacy fields (optional support)
-      productName, 
-      quantity, 
-      imagesData 
-    } = req.body;
+    const orderData = req.body;
+    
+    // Generate a unique Order ID
+    const orderId = randomUUID();
 
-    // Normalize items: if 'items' exists use it, otherwise construct single item from legacy fields
-    let orderItems = [];
-    if (items && Array.isArray(items)) {
-      orderItems = items;
-    } else if (productName) {
-      orderItems = [{
-        productName,
-        quantity,
-        price: totalPrice, // Approx
-        imagesData: imagesData
-      }];
-    }
+    // Save order data to temporary storage
+    await saveOrder(orderId, orderData);
 
-    let attachments = [];
-    let itemsHtml = '';
-
-    // Process items for email and attachments
-    orderItems.forEach((item, itemIndex) => {
-      // Ensure quantity is an integer
-      const quantity = parseInt(item.quantity) || 0;
-
-      // Add to HTML summary
-      itemsHtml += `
-        <div style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <p style="margin: 0 0 4px 0; font-weight: bold; color: #111827;">${item.productName} <span style="font-weight: normal; color: #6b7280;">(${item.dimensions || 'Standard'})</span></p>
-          <table width="100%" style="font-size: 14px; color: #4b5563;">
-            <tr>
-              <td>Quantité: ${quantity}</td>
-              <td align="right">${item.price} €</td>
-            </tr>
-          </table>
-        </div>
-      `;
-
-      // Handle images for this item
-      if (item.imagesData && Array.isArray(item.imagesData)) {
-        item.imagesData.forEach((dataUrl, imgIndex) => {
-          if (!dataUrl) return;
-          
-          const matches = dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
-          if (matches && matches.length === 3) {
-            attachments.push({
-              filename: `item-${itemIndex + 1}-img-${imgIndex + 1}.${matches[1].split('/')[1]}`,
-              content: Buffer.from(matches[2], 'base64')
-            });
-          }
-        });
-      }
-    });
-
-    // Add Logo to attachments
-    const logoPath = path.join(__dirname, '../src/assets/logo/Ti\'Magnet.png');
-    attachments.push({
-      filename: 'Ti\'Magnet.png',
-      path: logoPath,
-      cid: 'logo'
-    });
-
-    // Parse address
-    let addressObj = customerAddress;
-    if (typeof customerAddress === 'string') {
-        try {
-            addressObj = JSON.parse(customerAddress);
-        } catch (e) {
-            addressObj = {};
-        }
-    }
-
-    const deliveryLabel = deliveryOption === 'mondial_relay' ? 'Mondial Relay' : 'Livraison à domicile';
-
-    let addressHtml = `
-        <div style="margin-top: 10px; font-size: 14px; color: #4b5563;">
-            <p style="margin: 2px 0;">${addressObj.name || customerName}</p>
-            <p style="margin: 2px 0;">${addressObj.street}</p>
-            <p style="margin: 2px 0;">${addressObj.postalCode} ${addressObj.city}</p>
-            <p style="margin: 2px 0;">${addressObj.province}</p>
-        </div>
-    `;
-
-    if (addressObj.relayPointId) {
-        addressHtml += `
-            <div style="margin-top: 15px; background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px; border-radius: 4px;">
-                <p style="margin: 0 0 5px 0; font-weight: bold; color: #166534;">📍 Point Relais Mondial Relay</p>
-                <p style="margin: 2px 0; font-size: 13px;"><strong>${addressObj.relayPointName}</strong></p>
-                <p style="margin: 2px 0; font-size: 13px;">${addressObj.relayPointAddress}</p>
-                <p style="margin: 2px 0; font-size: 12px; color: #6b7280;">ID: ${addressObj.relayPointId}</p>
-            </div>
-        `;
-    }
-
-    const commonDetailsHtml = `
-        <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-            <h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px; color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px;">Informations Client</h3>
-            <p style="margin: 5px 0; font-size: 14px;"><strong>Email:</strong> ${customerEmail}</p>
-            <p style="margin: 5px 0; font-size: 14px;"><strong>Téléphone:</strong> ${customerPhone}</p>
-            <p style="margin: 5px 0; font-size: 14px;"><strong>Mode de livraison:</strong> ${deliveryLabel}</p>
-            ${addressHtml}
-        </div>
-    `;
-
-    // Email to Owner
-    const ownerMailOptions = {
-      from: `"Ti'Magnet Order System" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_USER,
-      subject: `Nouvelle Commande: ${customerName}`,
-      html: `
-        <h2>Nouvelle Commande Reçue</h2>
-        
-        ${commonDetailsHtml}
-        
-        <h3>Récapitulatif de la commande</h3>
-        ${itemsHtml}
-        
-        <div style="margin-top: 20px; border-top: 2px solid #333; padding-top: 10px;">
-          <p><strong>Frais de livraison:</strong> ${deliveryFee || 0} €</p>
-          ${discountAmount > 0 ? `<p><strong>Réduction (${promoCode}):</strong> -${discountAmount} €</p>` : ''}
-          <p><strong>Prix Total:</strong> ${totalPrice} €</p>
-        </div>
-        
-        <p>Voir les images jointes pour la commande.</p>
-      `,
-      attachments: attachments,
-    };
-
-    // Email to Customer
-    const customerMailOptions = {
-      from: `"Ti'Magnet" <${process.env.SMTP_USER}>`,
-      to: customerEmail,
-      subject: `Confirmation de commande - Ti'Magnet`,
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f3f4f6; margin: 0; padding: 20px;">
-          <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-            
-            <!-- Header with Logo -->
-            <div style="background-color: #000000; padding: 24px; text-align: center;">
-              <img src="cid:logo" alt="Ti'Magnet" style="height: 40px; width: auto;">
-            </div>
-
-            <!-- Content -->
-            <div style="padding: 32px 24px;">
-              <h2 style="margin-top: 0; color: #111827; font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 24px;">Merci pour votre commande !</h2>
-              
-              <p style="color: #374151; margin-bottom: 24px;">Bonjour <strong>${customerName}</strong>,</p>
-              <p style="color: #374151; margin-bottom: 24px;">Nous avons bien reçu votre commande. <strong>Veuillez procéder au paiement pour valider votre commande.</strong></p>
-              
-              ${commonDetailsHtml}
-              
-              <h3 style="color: #111827; font-size: 18px; margin-bottom: 16px;">Votre Panier</h3>
-              <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0 16px; margin-bottom: 24px;">
-                ${itemsHtml}
-              </div>
-              
-              <div style="text-align: right; margin-bottom: 32px;">
-                <p style="margin: 5px 0; color: #6b7280;">Frais de livraison: ${deliveryFee || 0} €</p>
-                ${discountAmount > 0 ? `<p style="margin: 5px 0; color: #166534;">Réduction (${promoCode}): -${discountAmount} €</p>` : ''}
-                <p style="margin: 5px 0; font-size: 20px; font-weight: bold; color: #111827;">Total: ${totalPrice} €</p>
-              </div>
-              
-              <p style="color: #374151; font-size: 14px; text-align: center;">Une fois le paiement effectué, votre commande sera traitée.</p>
-            </div>
-
-            <!-- Footer -->
-            <div style="background-color: #f9fafb; padding: 24px; text-align: center; border-top: 1px solid #e5e7eb;">
-              <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">L'équipe Ti'Magnet</p>
-              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-                Une question ? Contactez-nous à <a href="mailto:contact@timagnet.com" style="color: #111827; text-decoration: underline;">contact@timagnet.com</a>
-              </p>
-            </div>
-          </div>
-        </body>
-        </html>
-      `,
-      attachments: attachments,
-    };
-
-    let sessionUrl;
+    let successUrl, cancelUrl;
+    const frontendUrl = process.env.FRONTEND_URL || req.headers.origin || 'http://localhost:5173';
 
     if (stripe) {
       // Create Stripe Checkout Session
@@ -309,31 +179,35 @@ app.post('/api/order', upload.array('images'), async (req, res) => {
               currency: 'eur',
               product_data: {
                 name: 'Commande Ti\'Magnet',
-                description: `Commande pour ${customerName}`,
+                description: `Commande pour ${orderData.customerName}`,
               },
-              unit_amount: Math.round(totalPrice * 100),
+              unit_amount: Math.round(orderData.totalPrice * 100),
             },
             quantity: 1,
           },
         ],
         mode: 'payment',
-        success_url: `${req.headers.origin || 'http://localhost:5173'}/success`,
-        cancel_url: `${req.headers.origin || 'http://localhost:5173'}/cart`,
-        customer_email: customerEmail,
+        success_url: `${frontendUrl}/success`,
+        cancel_url: `${frontendUrl}/cart`,
+        customer_email: orderData.customerEmail,
+        metadata: {
+          orderId: orderId // Pass the Order ID to metadata
+        }
       });
       sessionUrl = session.url;
+      
+      console.log(`Order ${orderId} created. Waiting for payment...`);
+      // DO NOT send emails here. They will be sent by the webhook upon payment success.
+
     } else {
       console.log('Stripe not configured. Simulating successful payment for dev/test.');
-      // In dev mode without Stripe, redirect directly to success page
-      sessionUrl = `${req.headers.origin || 'http://localhost:5173'}/success`;
+      // In dev mode without Stripe, redirect directly to success page and send emails immediately
+      sessionUrl = `${frontendUrl}/success`;
+      
+      console.log('Sending immediate confirmation (Dev Mode)...');
+      await sendOrderEmails(orderData, transporter, __dirname);
+      await deleteOrder(orderId); // Cleanup immediately since no webhook will fire
     }
-
-    // Send emails
-    console.log('Sending email to owner...');
-    await transporter.sendMail(ownerMailOptions);
-    
-    console.log('Sending confirmation to customer...');
-    await transporter.sendMail(customerMailOptions);
 
     res.status(200).json({ 
       success: true, 

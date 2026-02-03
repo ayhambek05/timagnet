@@ -12,14 +12,30 @@
   "creations": {
     "title": "Our Creations",
     "description": "Discover some examples of custom magnets created for our customers. Each magnet tells a unique story.",
-    "seo_title": "Our Creations - Ti'Magnet",
+    "seo_title": "Our Creations",
     "seo_desc": "Photo gallery of our custom magnets. Discover the quality of our prints and get inspired for your own creations."
   },
   "seo": {
-    "cart_title": "My Cart - Ti'Magnet",
+    "home_title": "Custom Photo Magnets & Fridge Magnets France",
+    "home_desc": "Create unique custom photo magnets in France. Turn your memories into high-quality fridge magnets. Fast delivery and satisfaction guaranteed.",
+    "cart_title": "My Cart",
     "cart_desc": "Finalize your order of custom photo magnets.",
-    "success_title": "Order Confirmed - Ti'Magnet",
-    "success_desc": "Your order has been successfully confirmed."
+    "success_title": "Order Confirmed",
+    "success_desc": "Your order has been successfully confirmed.",
+    "contact_title": "Contact Us",
+    "contact_desc": "Any questions? Contact the Ti'Magnet team for your custom magnets.",
+    "order_title": "Order Magnets",
+    "order_desc": "Create your custom magnets in a few clicks. Choose your format and upload your photos.",
+    "privacy_title": "Privacy Policy",
+    "privacy_desc": "Read our privacy and data protection policy.",
+    "terms_sales_title": "Terms of Sales",
+    "terms_sales_desc": "Read our general terms of sales.",
+    "terms_use_title": "Terms of Use",
+    "terms_use_desc": "Read our general terms of use.",
+    "cookie_title": "Cookie Policy",
+    "cookie_desc": "Learn more about our use of cookies.",
+    "404_title": "Page Not Found",
+    "404_desc": "The page you are looking for does not exist."
   },
   "hero": {
     "title_part1": "Your memories,",

@@ -1,9 +1,17 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import SEO from "@/components/SEO";
+import { useTranslation } from "react-i18next";
 
 const TermsOfSalesPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={t('seo.terms_sales_title')}
+        description={t('seo.terms_sales_desc')}
+        url="https://timagnet.com/terms-of-sales"
+      />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-3xl font-bold mb-2">Conditions Générales De Vente – Ti’Magnet</h1>

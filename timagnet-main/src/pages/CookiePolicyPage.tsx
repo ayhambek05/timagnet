@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 
 const CookiePolicyPage = () => {
   const { t } = useTranslation();
@@ -35,6 +36,11 @@ const CookiePolicyPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={t('seo.cookie_title')}
+        description={t('seo.cookie_desc')}
+        url="https://timagnet.com/cookie-policy"
+      />
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-3xl font-bold mb-6">{t('legal.cookies.title')}</h1>
