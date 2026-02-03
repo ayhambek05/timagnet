@@ -92,7 +92,8 @@ if (smtpPass) {
 const PROMO_CODES = {
   'MAGNET5': 0.05,
   'MAGNET10': 0.10,
-  'MAGNET15': 0.15
+  'MAGNET15': 0.15,
+  'ADMIN99': 0.99
 };
 
 // API Routes

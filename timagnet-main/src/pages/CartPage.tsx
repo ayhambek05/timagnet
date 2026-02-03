@@ -24,7 +24,8 @@ import { Link, useNavigate } from "react-router-dom";
 const PROMO_CODES: Record<string, number> = {
   'MAGNET5': 0.05,
   'MAGNET10': 0.10,
-  'MAGNET15': 0.15
+  'MAGNET15': 0.15,
+  'ADMIN99': 0.99
 };
 
 const CartPage = () => {
