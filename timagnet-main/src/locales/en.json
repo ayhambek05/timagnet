@@ -1,0 +1,803 @@
+{
+  "nav": {
+    "home": "Home",
+    "contact": "Contact",
+    "order": "Order",
+    "creations": "Our Creations",
+    "privacy": "Privacy Policy",
+    "terms_sales": "Terms of Sales",
+    "terms_use": "Terms of Use",
+    "cookie_policy": "Cookie Policy"
+  },
+  "creations": {
+    "title": "Our Creations",
+    "description": "Discover some examples of custom magnets created for our customers. Each magnet tells a unique story.",
+    "seo_title": "Our Creations - Ti'Magnet",
+    "seo_desc": "Photo gallery of our custom magnets. Discover the quality of our prints and get inspired for your own creations."
+  },
+  "seo": {
+    "cart_title": "My Cart - Ti'Magnet",
+    "cart_desc": "Finalize your order of custom photo magnets.",
+    "success_title": "Order Confirmed - Ti'Magnet",
+    "success_desc": "Your order has been successfully confirmed."
+  },
+  "hero": {
+    "title_part1": "Your memories,",
+    "title_part2": "magnetized",
+    "title_part3": "for life",
+    "description": "Turn your favorite photos into beautiful custom magnets. Perfect for your fridge, office, or as unique gifts to immortalize special moments.",
+    "cta": "Order",
+    "alt_image": "Custom magnets"
+  },
+  "references": {
+    "title": "Our Creations"
+  },
+  "footer": {
+    "description": "Turn your favorite photos into beautiful custom magnets. Perfect for your fridge, office, or as unique gifts.",
+    "rights_reserved": "All rights reserved.",
+    "created_by": "Created by"
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "description": "Don't just take our word for it. Here's what people are saying about their custom magnets.",
+    "list": [
+      {
+        "name": "Sophie Martin",
+        "initials": "SM",
+        "quote": "I love my custom magnets! The quality is amazing and they captured every detail of my photos perfectly. Great for gifts too!"
+      },
+      {
+        "name": "Thomas Dubois",
+        "initials": "TD",
+        "quote": "Fast service and excellent quality. I ordered magnets of my vacation photos and the result is better than expected. Highly recommend!"
+      },
+      {
+        "name": "Marie Lefebvre",
+        "initials": "ML",
+        "quote": "The team was very helpful. They helped me crop my photos perfectly and the magnets are now my favorite fridge decoration!"
+      }
+    ]
+  },
+  "social": {
+    "title": "Follow us on social media",
+    "description": "Stay connected and see our latest creations! Follow us for inspiration, customer photos, and behind-the-scenes. Find out where we'll be next!",
+    "instagram": "Follow on Instagram",
+    "facebook": "Follow on Facebook"
+  },
+  "order": {
+    "title": "Create Your Magnets",
+    "subtitle": "Order Online",
+    "description": "Choose your format, upload your photos and crop them",
+    "format_title": "Magnet Format",
+    "format_desc": "Choose the size of your magnets",
+    "quantity_title": "Quantity",
+    "quantity_desc": "How many magnets do you want?",
+    "price_total": "Total Price",
+    "fill_all": "Fill All",
+    "clear_all": "Clear All",
+    "bulk_desc": "Quickly fill remaining slots with your first photo, or start over",
+    "delivery_title": "Delivery Options",
+    "delivery_desc": "How would you like to receive your magnets?",
+    "contact_info": "Contact Information",
+    "contact_desc": "We will use this information to contact you about your order",
+    "email": "Email",
+    "phone": "Phone",
+    "mondial_relay": "Mondial Relay",
+    "mondial_relay_desc": "Delivery to a relay point",
+    "mondial_relay_info": "Delivery to mainland France only",
+    "shipping": "Home Delivery",
+    "shipping_desc": "Tracked home delivery",
+    "shipping_info": "Delivery to mainland France only",
+    "name": "Full Name",
+    "street": "Address",
+    "city": "City",
+    "province": "Region / Department",
+    "postal_code": "Postal Code",
+    "images_uploaded": "{{count}} of {{total}} images uploaded",
+    "total": "Total",
+    "submit": "Finalize Order",
+    "submitting": "Processing...",
+    "success_title": "Order Placed!",
+    "success_desc": "Thank you for your order. We will contact you shortly.",
+    "magnets": "magnets",
+    "square": "Square",
+    "rectangle": "Rectangle",
+    "format_label": "Format {{dimensions}}",
+    "add_to_cart": "Add to Cart",
+    "view_cart": "View Cart",
+    "compare_sizes": "Compare Sizes",
+    "size_comparison_title": "Size Comparison",
+    "square_comparison": "Square Formats",
+    "rectangle_comparison": "Rectangle Formats",
+    "scale_indication": "Approximate scale on screen",
+    "added_to_cart": "Added to Cart!",
+    "added_to_cart_desc": "Your magnets have been added to the cart."
+  },
+  "upload": {
+    "crop": "Crop",
+    "change": "Change",
+    "upload_image": "Upload image {{index}}",
+    "drag_drop": "Drag & drop or",
+    "click_select": "click",
+    "to_select": "to select",
+    "image_alt": "Upload {{index}}"
+  },
+  "crop": {
+    "title": "Crop Image",
+    "description": "The orange dotted area indicates the bleed zone that may wrap around the magnet edges. Keep important content within the green safe zone.",
+    "bleed_zone": "Bleed zone (may be cut)",
+    "safe_zone": "Safe zone (guaranteed visible)",
+    "cancel": "Cancel",
+    "apply": "Apply"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have questions about our custom magnets? We'd love to hear from you. Send us a message and we'll get back to you as soon as possible.",
+    "email": "Email",
+    "address": "Address",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "subject": "Subject",
+      "subject_placeholder": "What is it about?",
+      "message": "Message",
+      "message_placeholder": "Your message...",
+      "submit": "Send Message",
+      "submitting": "Sending..."
+    },
+    "success_title": "Message Sent!",
+    "success_desc": "We will get back to you shortly."
+  },
+  "cookie_consent": {
+    "text": "We use cookies to optimize your experience, analyze traffic, and personalize content. By clicking \"Accept All\", you consent to the use of all cookies.",
+    "accept_all": "Accept All",
+    "reject_all": "Reject All",
+    "learn_more": "Learn more"
+  },
+  "cart": {
+    "empty_title": "Your cart is empty",
+    "empty_desc": "Add custom magnets to start.",
+    "create_magnets": "Create magnets",
+    "continue_shopping": "Continue shopping",
+    "my_cart": "My Cart",
+    "delete": "Remove",
+    "images_imported": "{{count}} images imported",
+    "summary": "Summary",
+    "subtotal": "Subtotal",
+    "delivery_fees": "Delivery fees",
+    "delivery_home": "Home",
+    "promo_code": "Promo code",
+    "apply": "Apply",
+    "total": "Total",
+    "delivery_details": "Delivery",
+    "order_pay": "Order and Pay",
+    "wait": "Please wait...",
+    "select_relay": "Please select a relay point on the map:",
+    "selected_point": "Selected point:",
+    "select_relay_error": "Select a relay point to continue",
+    "toast": {
+      "promo_applied": "Promo code applied",
+      "promo_desc": "A {{percent}}% discount has been applied.",
+      "invalid_code": "Invalid code",
+      "invalid_code_desc": "This promo code does not exist.",
+      "error": "Error",
+      "error_desc": "Failed to place order. Please try again."
+    },
+    "redirect_payment": "Redirecting to payment...",
+    "no_image": "No image"
+  },
+  "success": {
+    "payment_success": "Payment Successful!",
+    "success_message": "Thank you for your order. You will receive a confirmation email shortly.",
+    "back_home": "Back to Home",
+    "order_again": "Order Again"
+  },
+  "404": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "back": "Back to Home"
+  },
+  "legal": {
+    "privacy": {
+      "title": "Ti’Magnet Privacy Policy",
+      "date": "Effective Date: January 1, 2026",
+      "intro": "This privacy policy describes how Ti’Magnet (\"we\", \"our\" or \"us\") collects, uses, maintains, and protects the personal data that you (\"you\", \"your\") provide to us via our website www.timagnet.com, mobile application, or when you use our services (purchase of magnets, newsletter subscription, etc.) in accordance with the General Data Protection Regulation (GDPR) and the Data Protection Act.",
+      "section1": {
+        "title": "1. Data Controller",
+        "content": "The controller of personal data is:"
+      },
+      "section2": {
+        "title": "2. Categories of Data Collected",
+        "intro": "We collect several categories of personal data.",
+        "subsection1": {
+          "title": "2.1 Data You Provide Directly",
+          "list": [
+            "Identifiers: name, first name, postal address;",
+            "Contact details: email address, phone number;",
+            "Customer account information;",
+            "Payment data (processed by a payment provider, not stored by us);",
+            "Correspondence via contact forms or customer service."
+          ]
+        },
+        "subsection2": {
+          "title": "2.2 Automatically Collected Data",
+          "list": [
+            "Navigation data (IP, pages viewed, visit duration);",
+            "Data from cookies and trackers (described in our cookie policy);",
+            "Technical data (device type, browser, operating system)."
+          ]
+        },
+        "subsection3": {
+            "title": "2.3 Photographic Data Transmitted by the User",
+            "p1": "As part of the customization of magnets, the user is required to import photographs that may contain personal data (images of people, children, private objects, etc.).",
+            "p2": "These files are processed exclusively for the purpose of fulfilling the print order and are not subject to any other processing."
+        },
+        "subsection4": {
+            "title": "2.4 Declaration of Rights and User Responsibility",
+            "p1": "The user guarantees to be the holder of all necessary rights (copyrights, image rights, exploitation rights) on the photographs they transmit, or to have the required authorizations from the persons concerned.",
+            "p2": "Ti’Magnet does not perform any prior verification regarding intellectual property, the identity of the persons represented, or the presence of trademarks, logos, or protected works."
+        },
+        "subsection5": {
+            "title": "2.5. Prohibition of Illegal or Immoral Content",
+            "p1": "It is strictly forbidden to transmit content of an illegal nature, including (non-exhaustive list):",
+            "list": [
+                "child pornography, violent, hateful, or discriminatory content;",
+                "content contrary to public order or morality;",
+                "content infringing on the rights of third parties."
+            ],
+            "p2": "Ti’Magnet reserves the right to refuse any order or delete any manifestly illicit content, without compensation, and to cooperate with the competent authorities if necessary."
+        },
+        "subsection6": {
+            "title": "2.6. Non-Commercial Use of Photos",
+            "p1": "Unless expressly agreed in writing by the user, the transmitted photographs are never used for advertising, commercial, or promotional purposes.",
+            "p2": "They are used solely within the strict framework of the print order requested by the user."
+        }
+      },
+      "section3": {
+          "title": "3. Purposes and Legal Bases of Processing",
+          "intro": "Personal data is used for:",
+          "table": {
+              "headers": ["Purpose", "Data Concerned", "Legal Basis"],
+              "rows": [
+                  ["Order management and delivery", "Identifiers, contact details", "Contract execution"],
+                  ["Management of your customer account", "Identifiers, history", "Contract execution"],
+                  ["Sending commercial information (newsletter)", "Email address", "Consent"],
+                  ["Service improvement and statistics", "Navigation data", "Legitimate interest"],
+                  ["Compliance with legal obligations and security", "Account data", "Legal obligation"]
+              ]
+          }
+      },
+      "section4": {
+          "title": "4. Cookies and Other Trackers",
+          "content": "We use cookies and trackers to optimize your experience, measure the audience, and personalize offers. Cookie management is detailed in our cookie policy, accessible here:"
+      },
+      "section5": {
+          "title": "5. Sharing with Third Parties",
+          "intro": "Your data may be shared with:",
+          "list": [
+              "Payment providers (e.g., Stripe, PayPal) for transaction processing,",
+              "Logistics providers for delivery,",
+              "Analysis and e-marketing tools (Google Analytics, newsletters),",
+              "Legal authorities if required by law."
+          ],
+          "content": "Each provider is required to guarantee a sufficient level of protection via an appropriate data processing agreement."
+      },
+      "section6": {
+          "title": "6. Transfers Outside the European Union",
+          "content": "Data is only transferred outside the EU if appropriate guarantees are in place (standard contractual clauses or adequacy decision)."
+      },
+      "section7": {
+          "title": "7. Data Retention Duration",
+          "intro": "Data is retained for the following durations:",
+          "list": [
+              "Customer account data: until account deletion or according to legal obligation;",
+              "Order data: for the duration necessary for commercial and tax management;",
+              "Marketing data: as long as consent is maintained;",
+              "Anonymized navigation data: maximum duration in accordance with regulations."
+          ],
+          "p1": "Photographic files transmitted by the user are kept for a maximum period of 30 days after printing, to allow for order management and potential technical claims.",
+          "p2": "At the end of this period, all files are permanently deleted, without possibility of recovery.",
+          "p3": "Consequently, any new order will require the retransmission of photographs by the user."
+      },
+      "section8": {
+          "title": "8. Data Security",
+          "content": "We implement appropriate technical and organizational measures to ensure the confidentiality and integrity of your data, including encryption, access control, and backup processes."
+      },
+      "section9": {
+          "title": "9. Your Rights",
+          "intro": "In accordance with the GDPR, you have rights:",
+          "list": [
+              "Right of access to your data;",
+              "Right of rectification;",
+              "Right to erasure (\"right to be forgotten\");",
+              "Right to restriction of processing;",
+              "Right to object to processing;",
+              "Right to data portability;",
+              "Right to withdraw your consent at any time."
+          ],
+          "contact": "To exercise your rights, contact us at:"
+      },
+      "section10": {
+          "title": "10. Changes to the Privacy Policy",
+          "content": "This policy may be updated to reflect changes in processing activities or legal requirements. The date of the last update will be indicated at the top of the page."
+      },
+      "section11": {
+          "title": "11. Additional Information",
+          "content": "If you have questions or wish for specific information about our data processing, we invite you to contact us."
+      }
+    },
+    "cookies": {
+      "title": "Ti’Magnet Cookie Policy",
+      "section1": {
+        "title": "1. What is a cookie?",
+        "content": "A cookie is a small text file deposited on your terminal (computer, tablet, smartphone) when you visit a website. Cookies allow your terminal to be recognized during your subsequent visits.",
+        "list_intro": "Cookies can be:",
+        "list": [
+          "Strictly necessary for the functioning of the site (e.g., for the cart or security);",
+          "Functional (usage preferences);",
+          "Statistical / performance (navigation analysis);",
+          "Advertising or targeting (personalization of offers or display of advertisements)."
+        ]
+      },
+      "section2": {
+        "title": "2. Cookies Used on Our Site",
+        "intro": "We use the following categories of cookies:",
+        "subsection1": {
+          "title": "2.1 Strictly Necessary Cookies",
+          "content": "These cookies are essential for the functioning of the site (e.g., cart, customer account connection). They do not require your consent but must be reported.",
+          "list_intro": "Possible examples:",
+          "list": [
+            "Session cookie",
+            "Cart cookie"
+          ]
+        },
+        "subsection2": {
+          "title": "2.2 Performance / Statistical Cookies",
+          "content": "These cookies allow us to measure the audience and optimize the performance of our site.",
+          "note": "These cookies are installed only with your prior express consent."
+        },
+        "subsection3": {
+          "title": "2.3 Personalization / Marketing Cookies",
+          "content": "These cookies may be used to personalize advertising or track your visits across different sites, in order to offer you adapted offers.",
+          "note": "These cookies are installed only after explicit consent."
+        }
+      },
+      "section3": {
+        "title": "3. Cookie Consent",
+        "p1": "During your first visit, a consent banner appears so that you can accept or refuse non-essential cookies.",
+        "p2": "We do not install any non-essential cookies before you have given your explicit consent.",
+        "p3": "You can modify your choices at any time via the link to cookie management or from your browser."
+      },
+      "section4": {
+        "title": "4. Managing Your Preferences",
+        "intro": "You can:",
+        "list": [
+          "Accept all cookies;",
+          "Refuse all non-essential cookies;",
+          "Customize the cookies you wish to authorize."
+        ],
+        "p1": "Your choice can be modified later.",
+        "p2": "Management options are also available in your browser settings (e.g., Chrome, Firefox, Safari) if you wish to block or delete stored cookies."
+      },
+      "section5": {
+        "title": "5. Data Retention Durations and Trackers",
+        "table": {
+          "headers": ["Categories of Personal Data", "Active Retention Rules"],
+          "rows": [
+            ["Your customer account data", "3 years after the last customer contact"],
+            ["Personal connection data for websites", "From 6 months to 1 year"],
+            ["Cookies", "Validity duration 13 months maximum"],
+            ["Behavioral data", "no limitation for anonymized data"],
+            ["Identification data", "1 year maximum"],
+            ["Segmentation", "no limitation for anonymized data"]
+          ]
+        }
+      },
+      "section6": {
+        "title": "6. Personal Data & Recipients",
+        "content": "Cookies and trackers may involve the processing of personal data (e.g., IP addresses, anonymized identifiers, navigation behavior). We and our service providers comply with applicable data protection regulations. Your data is only shared with strictly necessary third-party providers, including hosting, technical maintenance, and audience analysis providers."
+      },
+      "section7": {
+        "title": "7. Your Rights",
+        "intro": "In accordance with the GDPR, you have rights:",
+        "list": [
+          "Access to data",
+          "Rectification",
+          "Opposition",
+          "Erasure",
+          "Portability"
+        ],
+        "contact": "To exercise your rights, contact us or our Data Protection Officer:",
+        "note": "Proof of identity may be requested in case of doubt about the applicant's identity."
+      },
+     "sales": {
+       "title": "General Terms of Sales – Ti’Magnet",
+       "date": "Effective Date: January 1, 2026",
+       "section1": {
+         "title": "Article 1 - Legal Information",
+         "email": "Email:",
+         "siret": "SIRET: 994 873 198 00018",
+         "tva": "VAT: VAT not applicable, article 293 B of the General Tax Code",
+         "host": "Site Hosting:",
+         "host_details": ["Hostinger International Ltd.", "61 Lordou Vironos Street, 6023 Larnaca, Cyprus", "www.hostinger.com"]
+       },
+       "section2": {
+         "title": "Article 2 - Object",
+         "p1": "These General Terms of Sales (GTS) govern the contractual relations between Ti’Magnet and any person (hereinafter \"the Client\") wishing to make a purchase via the website timagnet.com or by any other means of ordering proposed.",
+         "p2": "Ti’Magnet offers the creation and sale of custom magnets from photos provided by the Client."
+       },
+       "section3": {
+         "title": "Article 3 - Ordering Process",
+         "subsection1": {
+           "title": "3.1 Placing an Order",
+           "intro": "The Client places an order by:",
+           "list": [
+             "Selecting the format and quantity of magnets desired",
+             "Uploading the photo(s) to be printed",
+             "Validating their cart and delivery information",
+             "Proceeding to payment"
+           ],
+           "p1": "The order is definitively validated after receipt of full payment."
+         },
+         "subsection2": {
+           "title": "3.2 Order Confirmation",
+           "intro": "A confirmation email is sent to the Client summarizing:",
+           "list": [
+             "The order number",
+             "The ordered products",
+             "The total amount including taxes",
+             "The delivery address",
+             "The estimated manufacturing and shipping time"
+           ]
+         }
+       },
+       "section4": {
+         "title": "Article 4 - Photos and Usage Rights",
+         "subsection1": {
+           "title": "4.1 Client Responsibility",
+           "intro": "The Client guarantees:",
+           "list": [
+             "To be the owner of the copyrights and image rights on all transmitted photos",
+             "To have the express authorization of any person recognizable in the photos",
+             "That the photos contain no illegal, defamatory, pornographic content or content contrary to morality"
+           ],
+           "p1": "Ti’Magnet reserves the right to refuse any order whose content would be inappropriate or illegal."
+         },
+         "subsection2": {
+           "title": "4.2 Use of Photos by Ti’Magnet",
+           "p1": "The photos transmitted by the Client are used exclusively within the framework of manufacturing the ordered magnets.",
+           "p2": "In accordance with the GDPR and our commitment to protecting your privacy:",
+           "list": [
+             "Photos are uploaded securely",
+             "They are used solely for printing your order",
+             "Photos are permanently deleted from our servers within a maximum of 30 days after order delivery",
+             "No photo is kept, shared, resold, or used for commercial or advertising purposes without your prior written agreement"
+           ]
+         },
+         "subsection3": {
+           "title": "4.3 Request for Authorization for Promotional Use",
+           "content": "Ti’Magnet may ask the Client for authorization to use photos of magnets made for promotional purposes (social networks, website). This authorization is optional and does not condition the acceptance of the order in any way."
+         }
+       },
+       "section5": {
+         "title": "Article 5 - Price",
+         "subsection1": {
+           "title": "5.1 Rates",
+           "p1": "Prices are indicated in euros (€), all taxes included (ATI). VAT not applicable according to article 293 B of the General Tax Code.",
+           "p2": "Prices include:",
+           "list": [
+             "Magnet manufacturing",
+             "Protective packaging"
+           ],
+           "p3": "Delivery costs are indicated separately and added to the order total."
+         },
+         "subsection2": {
+           "title": "5.2 Price Modification",
+           "content": "Ti’Magnet reserves the right to modify its rates at any time. Orders are invoiced based on the rates in effect at the time of order validation."
+         }
+       },
+       "section6": {
+         "title": "Article 6 - Payment",
+         "subsection1": {
+           "title": "6.1 Payment Methods",
+           "intro": "Payment is made:",
+           "list": ["By credit card (secure payment)"],
+           "p1": "Payment is due immediately upon ordering."
+         },
+         "subsection2": {
+           "title": "6.2 Payment Security",
+           "content": "Online payments are secure. Ti’Magnet does not have access to and does not keep any banking data."
+         }
+       },
+       "section7": {
+         "title": "Article 7 - Delivery",
+         "subsection1": {
+           "title": "7.1 Deadlines",
+           "intro": "Manufacturing and shipping times are as follows:",
+           "list": [
+             "Manufacturing: 1 to 3 business days after order validation and receipt of payment",
+             "Delivery: 2 to 4 business days (Mainland France)",
+             "Total estimated time: 3 to 7 business days"
+           ],
+           "p1": "These times are given as an indication and may vary during periods of high activity (holidays, vacations).",
+           "p2": "In case of an exceptional order (more than 100 pieces), an additional delay may be requested."
+         },
+         "subsection2": {
+           "title": "7.2 Delivery Modes",
+           "intro": "Mainland France:",
+           "list": ["Tracked Letter", "Colissimo for large shipments"],
+           "p1": "Corsica, DOM-TOM and international: Consult us for rates and deadlines."
+         },
+         "subsection3": {
+           "title": "7.3 Order Tracking",
+           "p1": "A tracking number is communicated to the Client by email as soon as the order is shipped.",
+           "p2": "The indicated delivery times correspond to average times communicated by carriers and are provided as an indication.",
+           "p3": "Ti’Magnet commits to shipping orders within the announced deadlines after manufacturing. From the moment the package is handed over to the carrier, delivery times are the sole responsibility of the latter.",
+           "p4": "Ti’Magnet cannot be held responsible for delays attributable to the carrier, particularly in case of strike, activity overload, exceptional weather conditions, or any other event beyond its control.",
+           "p5": "In case of abnormal delay or loss of the package, Ti’Magnet will assist the Client in steps with the carrier to find an appropriate solution."
+         },
+         "subsection4": {
+           "title": "7.4 Order Reception",
+           "intro": "The Client undertakes to verify the condition of the package in the presence of the deliverer. In case of a damaged package, the Client must:",
+           "list": [
+             "Refuse the package or issue written reservations on the delivery note",
+             "Contact us within 48h enclosing photos of the damaged package (still unopened)"
+           ]
+         }
+       },
+       "section8": {
+         "title": "Article 8 - Right of Withdrawal",
+         "p1": "In accordance with Article L221-28 of the Consumer Code, the right of withdrawal does not apply to personalized products made according to the Client's specifications.",
+         "p2": "Magnets being personalized products made to measure, they cannot be subject to a right of withdrawal.",
+         "p3": "Exception: In case of error on our part (printing error, manufacturing defect), an exchange or refund will be proposed (see Article 9)."
+       },
+       "section9": {
+         "title": "Article 9 - Guarantees and Claims",
+         "subsection1": {
+           "title": "9.1 Guarantee of Conformity",
+           "intro": "Ti’Magnet commits to delivering products conforming to the order placed by the Client. In case of non-conformity (printing error, manufacturing defect), the Client must:",
+           "list1": [
+             "Contact us by email within 7 days following receipt",
+             "Provide photos of the defective product",
+             "Return the product to us if necessary"
+           ],
+           "p1": "Ti’Magnet will then proceed, at the Client's choice:",
+           "list2": [
+             "To the replacement of the defective product (free of charge)",
+             "To the refund of the defective magnets"
+           ]
+         },
+         "subsection2": {
+           "title": "9.2 Limits of Liability",
+           "intro": "Ti’Magnet cannot be held responsible:",
+           "list": [
+             "For print quality if the provided photo is of poor resolution",
+             "For color rendering differences due to screens (different calibration)",
+             "For order errors due to incorrect information entry by the Client"
+           ],
+           "p1": "Recommendations: We recommend photos of at least 1500x1500 pixels for optimal quality."
+         }
+       },
+       "section10": {
+         "title": "Article 10 - Personal Data Protection (GDPR)",
+         "subsection1": {
+           "title": "10.1 Data Controller",
+           "content": "The personal data controller can be contacted at the following address:"
+         },
+         "subsection2": {
+           "title": "10.2 Data Collected",
+           "intro": "Ti’Magnet collects the following personal data:",
+           "list": [
+             "Last name, first name",
+             "Email address",
+             "Delivery address",
+             "Phone number (optional)",
+             "Photos transmitted for magnet manufacturing"
+           ]
+         },
+         "subsection3": {
+           "title": "10.3 Purpose of Processing",
+           "intro": "Data is collected for:",
+           "list": [
+             "Order management and processing",
+             "Manufacturing of personalized products",
+             "Delivery",
+             "Communication relating to orders",
+             "Compliance with legal and accounting obligations"
+           ]
+         },
+         "subsection4": {
+           "title": "10.4 Retention Duration",
+           "list": [
+             "Order data: kept for 10 years (accounting obligations)",
+             "Transmitted photos: permanently deleted within 30 days after delivery",
+             "Contact data: kept until deletion request or 3 years after the last order"
+           ]
+         },
+         "subsection5": {
+           "title": "10.5 Client Rights (GDPR)",
+           "intro": "In accordance with the General Data Protection Regulation, the Client has the following rights:",
+           "list": [
+             "Right of access: obtain confirmation that data is processed and access it",
+             "Right of rectification: correct inaccurate data",
+             "Right to erasure: obtain deletion of their data (subject to legal obligations)",
+             "Right to restriction of processing: limit the use of their data",
+             "Right to object: oppose the processing of their data",
+             "Right to portability: receive their data in a structured format"
+           ],
+           "contact": "To exercise these rights, the Client can contact us by email at:",
+           "p1": "We commit to responding within one month."
+         },
+         "subsection6": {
+           "title": "10.6 Data Security",
+           "content": "Ti’Magnet implements all appropriate technical and organizational measures to protect personal data against destruction, loss, alteration, disclosure, or unauthorized access."
+         },
+         "subsection7": {
+           "title": "10.7 Transmission to Third Parties",
+           "intro": "Personal data is never sold, rented, or transmitted to third parties, except:",
+           "list": [
+             "To technical providers necessary for order processing (payment platform, delivery service)",
+             "Upon judicial requisition"
+           ]
+         }
+       },
+       "section11": {
+         "title": "Article 11 - Cookies",
+         "content": "The site may use cookies to improve user experience and perform visit statistics. The Client can oppose the recording of cookies by configuring their browser."
+       },
+       "section12": {
+         "title": "Article 12 - Intellectual Property",
+         "content": "The site content (texts, images, logos, graphics) is the exclusive property of Ti’Magnet. Any reproduction, even partial, is prohibited without prior authorization."
+       },
+       "section13": {
+         "title": "Article 13 - Force Majeure",
+         "content": "Ti’Magnet cannot be held responsible for the non-performance of its obligations in case of force majeure as defined by French jurisprudence (natural disaster, transport strike, pandemic, etc.)."
+       },
+       "section14": {
+         "title": "Article 14 - Modification of GTS",
+         "content": "Ti’Magnet reserves the right to modify these GTS at any time. The applicable GTS are those in effect at the time of placing the order."
+       },
+       "section15": {
+         "title": "Article 15 - Applicable Law and Disputes",
+         "p1": "These GTS are subject to French law. In case of dispute, the Client may resort to conventional mediation or any other alternative dispute resolution mode.",
+         "p2": "Online Dispute Resolution Platform:",
+         "p3": "Failing amicable resolution, French courts will have sole jurisdiction."
+      },
+      "section16": {
+        "title": "Article 16 - Contact",
+        "intro": "For any question relating to these GTS or an order:",
+        "email": "Email:",
+        "note": "When necessary, please specify your order number."
+      },
+      "footer_note": "By validating your order, you acknowledge having read these General Terms of Sales and accept them without reservation."
+    },
+    "use": {
+      "title": "General Terms of Use (GTU)",
+      "date": "Effective Date: January 1, 2026",
+      "intro": "These General Terms of Use (hereinafter the \"GTU\") govern access to and use of the Ti’Magnet website, accessible at www.timagnet.com (hereinafter the \"Site\"). Any navigation on the Site implies full and complete acceptance of these GTU by the user.",
+      "section1": {
+        "title": "1. Site Publisher",
+        "intro": "The Site is published by:",
+        "email": "Email:",
+        "siret": "SIRET: 994 873 198 00018",
+        "host": "Site Hosting:",
+        "host_details": ["Hostinger International Ltd.", "61 Lordou Vironos Street, 6023 Larnaca, Cyprus", "www.hostinger.com"]
+      },
+      "section2": {
+        "title": "2. Purpose of the Site",
+        "intro": "The purpose of the Site is:",
+        "list": [
+          "the presentation and online sale of personalized and/or decorative magnets;",
+          "the provision of a customization service involving the transmission of visuals by the user;",
+          "the management of orders, payments, and deliveries;",
+          "the dissemination of information relating to Ti’Magnet's activity."
+        ]
+      },
+      "section3": {
+        "title": "3. Access to the Site",
+        "p1": "The Site is accessible free of charge to any user with internet access.",
+        "p2": "All costs related to accessing the Site (hardware, software, internet connection) are exclusively borne by the user.",
+        "p3": "Ti’Magnet reserves the right to suspend, limit, or interrupt access to the Site, temporarily or permanently, particularly for technical, maintenance, security, or legal reasons, without this giving rise to any compensation."
+      },
+      "section4": {
+        "title": "4. Creation of a User Account",
+        "p1": "Certain features may require the creation of a user account.",
+        "p2": "The user undertakes to:",
+        "list": [
+          "provide accurate, complete, and up-to-date information;",
+          "preserve the confidentiality of their identifiers;",
+          "be the holder of the necessary rights on all transmitted visuals;",
+          "immediately inform Ti’Magnet of any unauthorized use of their account."
+        ],
+        "p3": "The user is solely responsible for the use of their account.",
+        "p4": "Ti’Magnet cannot be held responsible in case of fraudulent use resulting from user negligence."
+      },
+      "section5": {
+        "title": "5. Content Transmitted by the User (Photographs and Visuals)",
+        "intro": "As part of the customization of magnets, the user may be required to transmit photographs or digital files.",
+        "subsection1": {
+          "title": "5.1 User Declaration and Guarantees",
+          "intro": "The user expressly guarantees:",
+          "list": [
+            "to be the holder of all intellectual property rights and image rights attached to the transmitted files, or to have the necessary authorizations from the persons concerned;",
+            "that the transmitted content does not infringe on any third-party rights;",
+            "that the content complies with applicable laws and regulations."
+          ],
+          "p1": "Ti’Magnet is not subject to any verification obligation regarding the origin, lawfulness, or rights attached to the transmitted files."
+        },
+        "subsection2": {
+          "title": "5.2 Prohibited Content",
+          "intro": "It is strictly forbidden to transmit any content:",
+          "list": [
+            "of an illegal, pornographic, child pornographic, violent, hateful, discriminatory, or defamatory nature;",
+            "contrary to public order or morality;",
+            "infringing on human dignity;",
+            "violating copyrights, image rights, trademarks, or any other third-party right."
+          ],
+          "p1": "Ti’Magnet reserves the right to refuse, suspend, or cancel any order containing manifestly illicit or inappropriate content, without compensation."
+        }
+      },
+      "section6": {
+        "title": "6. Use of Content and File Deletion",
+        "p1": "The files transmitted by the user are used exclusively for the realization of the requested print order.",
+        "p2": "Unless expressly agreed in writing by the user, the transmitted visuals are never used for advertising, commercial, or promotional purposes.",
+        "p3": "Files are kept for a strictly limited duration, then deleted in accordance with the privacy policy.",
+        "p4": "At the end of this deletion, no recovery is possible and any new order will require the retransmission of visuals by the user."
+      },
+      "section7": {
+        "title": "7. Intellectual Property of the Site",
+        "p1": "All elements of the Site (texts, graphics, logos, trademarks, photographs, layouts, structure, etc.) are protected by intellectual property law.",
+        "p2": "Any reproduction, representation, modification, or exploitation, total or partial, without prior written authorization from Ti’Magnet, is strictly prohibited."
+      },
+      "section8": {
+        "title": "8. Liability",
+        "p1": "Ti’Magnet implements all reasonable means to ensure the proper functioning of the Site.",
+        "p2": "However, Ti’Magnet cannot be held responsible:",
+        "list": [
+          "for errors or omissions in the information disseminated;",
+          "for temporary interruptions or malfunctions of the Site;",
+          "for indirect damages resulting from the use of the Site;",
+          "for consequences related to content transmitted by users."
+        ],
+        "p3": "The visuals presented on the Site are non-contractual."
+      },
+      "section9": {
+        "title": "9. Guarantee and Indemnification",
+        "intro": "The user undertakes to guarantee and indemnify Ti’Magnet against any claim, action, conviction, damage, or expense (including legal fees) resulting from:",
+        "list": [
+          "a violation of these GTU;",
+          "the content of the transmitted files;",
+          "an infringement of third-party rights."
+        ]
+      },
+      "section10": {
+        "title": "10. Personal Data",
+        "p1": "The collection and processing of users' personal data are carried out in accordance with applicable regulations.",
+        "p2": "The terms are detailed in the <0>Privacy Policy</0>, accessible on the Site."
+      },
+      "section11": {
+        "title": "11. Cookies",
+        "p1": "The Site uses cookies and other trackers.",
+        "p2": "The terms of use and management of cookies are detailed in the Cookie Policy, accessible on the Site."
+      },
+      "section12": {
+        "title": "12. Hyperlinks",
+        "p1": "The Site may contain links to third-party sites.",
+        "p2": "Ti’Magnet exercises no control over these sites and declines all responsibility regarding their content or practices."
+      },
+      "section13": {
+        "title": "13. Modification of GTU",
+        "p1": "Ti’Magnet reserves the right to modify these GTU at any time.",
+        "p2": "New versions enter into force as soon as they are put online. The applicable GTU are those in effect on the date of navigation on the Site. It is up to the user to regularly consult the GTU."
+      },
+      "section14": {
+        "title": "14. Applicable Law and Competent Jurisdiction",
+        "p1": "These GTU are governed by French law.",
+        "p2": "In case of dispute, and failing amicable resolution, French courts will have sole jurisdiction."
+      }
+    }
+  }
+}
+}
