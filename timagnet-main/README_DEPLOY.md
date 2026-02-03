@@ -55,7 +55,7 @@ Ensure your `.env` file on the server has the correct settings.
 ```env
 SMTP_HOST=smtp.titan.email
 SMTP_PORT=465
-SMTP_USER=order@timagnet.com
+SMTP_USER=contact@timagnet.com
 SMTP_PASS_B64=...
 PORT=3001
 ```
