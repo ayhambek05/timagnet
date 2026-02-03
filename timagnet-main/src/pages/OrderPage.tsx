@@ -116,8 +116,8 @@ const OrderPage = () => {
     addToCart(item);
     
     toast({
-        title: t('cart.toast.added'),
-        description: t('cart.toast.added_desc'),
+        title: t('order.added_to_cart'),
+        description: t('order.added_to_cart_desc'),
     });
 
     navigate('/cart');
@@ -277,7 +277,7 @@ const OrderPage = () => {
               onClick={handleAddToCart}
             >
               <ShoppingCart className="mr-2 h-5 w-5" />
-              {t('cart.add_to_cart') || "Add to Cart"}
+              {t('order.add_to_cart') || "Add to Cart"}
             </Button>
           </div>
         </div>

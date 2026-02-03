@@ -92,6 +92,7 @@
     "street": "Address",
     "city": "City",
     "province": "Region / Department",
+    "department_placeholder": "Select a department",
     "postal_code": "Postal Code",
     "images_uploaded": "{{count}} of {{total}} images uploaded",
     "total": "Total",

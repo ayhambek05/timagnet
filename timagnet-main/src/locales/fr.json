@@ -92,6 +92,7 @@
     "street": "Adresse",
     "city": "Ville",
     "province": "Région / Département",
+    "department_placeholder": "Sélectionner un département",
     "postal_code": "Code postal",
     "images_uploaded": "{{count}} sur {{total}} images téléchargées",
     "total": "Total",
