@@ -31,7 +31,21 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Security Middleware
-app.use(helmet()); // Set security HTTP headers
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://js.stripe.com", "https://ajax.googleapis.com", "https://widget.mondialrelay.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:", "blob:"],
+      connectSrc: ["'self'", "https://api.stripe.com", "https://maps.googleapis.com"],
+      frameSrc: ["'self'", "https://js.stripe.com", "https://hooks.stripe.com"],
+      upgradeInsecureRequests: [],
+    },
+  },
+  crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+}));
 
 // Rate Limiting
 const limiter = rateLimit({
