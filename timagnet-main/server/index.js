@@ -138,8 +138,8 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, 
 });
 
 
-app.use(express.json({ limit: '50mb' })); // Increase limit for base64 images if sent as JSON
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.json({ limit: '200mb' })); // Increase limit for base64 images if sent as JSON
+app.use(express.urlencoded({ extended: true, limit: '200mb' }));
 
 // Configure Multer for handling file uploads (if we decide to send as FormData)
 const upload = multer({ 
